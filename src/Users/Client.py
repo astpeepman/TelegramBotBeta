@@ -407,7 +407,7 @@ class Client():
                     KeyBuf=types.InlineKeyboardButton(text=value.Name, callback_data='CLIENT_INFO+'+str(value.Id))
                     keyboard.add(KeyBuf)
                 bot.send_message(self.ClientId,text='Выберите категорию', reply_markup=keyboard)
-        except Error as e:
+        except Exception as e:
             print('Ошибка::', e)
 
 
@@ -438,6 +438,6 @@ class Client():
                                            message_id=call.message.message_id
                                            )
                 self.SendInfo(INFORMATHIONS[int(call.data.split('+')[1])])
-        except Error as e:
+        except Exception as e:
             print('Ошибка::', e)
 

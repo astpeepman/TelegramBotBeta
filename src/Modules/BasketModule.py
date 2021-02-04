@@ -74,7 +74,7 @@ class Basket():
             execute_query(addquery2)
 
 
-        except Error as e:
+        except Exception as e:
             print(e)
 
 
@@ -110,7 +110,7 @@ class Basket():
                          ({bId}, {p.ProductId}, {self.Counts[i]}, '{str(p.KindId)}')"""
                 execute_query(addquery)
                 i+=1
-        except Error as e:
+        except Exception as e:
             print(e)
 
     def GetFromFormedDB(self, orderId):

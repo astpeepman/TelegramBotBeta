@@ -59,7 +59,7 @@ class MainProduct(Product):
                         """
             execute_query(addquery)
             return True
-        except Error as e:
+        except Exception as e:
             print(e)
             return False
 
@@ -70,7 +70,7 @@ class MainProduct(Product):
         WHERE `productId`={self.ProductId}'''
             execute_query(updateQuery1)
             return True
-        except Error as e:
+        except Exception as e:
             print(e)
             return False
 
@@ -100,7 +100,7 @@ def GetKindById(id):
     try:
         k=SelectInTable('kinds', '*', 'kindId', id)
         return k
-    except Error as e:
+    except Exception as e:
         print(e)
         return None
 

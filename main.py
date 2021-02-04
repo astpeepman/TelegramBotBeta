@@ -143,4 +143,7 @@ GetInfoFromDB()
 
 th = Thread(target=TimeOut, daemon=True)
 th.start()
-bot.polling(none_stop=True, interval=0)
+try:
+    bot.polling(none_stop=True, interval=0)
+except:
+    print('Нужно перезапустить')

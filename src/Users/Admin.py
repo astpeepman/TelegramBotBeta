@@ -297,7 +297,7 @@ class Admin():
                 th = Thread(target=self.ToExcel)
                 th.start()
 
-        except Error as e:
+        except Exception as e:
             print('Ошибка у админа', e)
 
     def KeyCommands(self, call):
@@ -354,11 +354,11 @@ class Admin():
                         chat_id=call.message.chat.id,
                         message_id=call.message.message_id
                     )
-                except Error as e:
+                except Exception as e:
                     text='Что то пошло не так'
                     text+='\n'+str(e)
                     bot.send_message(self.Id, text)
-        except Error as e:
+        except Exception as e:
             print('Ошибка у админа', e)
 
     def ToExcel(self):

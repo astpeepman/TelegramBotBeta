@@ -92,7 +92,7 @@ class Order():
             execute_query(updatequery)
 
             return True
-        except Error as e:
+        except Exception as e:
             print(e)
             return False
 
